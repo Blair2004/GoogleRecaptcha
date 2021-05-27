@@ -1,7 +1,7 @@
 <?php
 namespace Modules\GoogleRecaptcha\Events;
 
-use App\Classes\Response;
+use App\Classes\Output;
 use App\Services\Options;
 use Exception;
 use GuzzleHttp\Client;
@@ -14,26 +14,26 @@ use Modules\GoogleRecaptcha\Settings\GoogleRecaptchaSettings;
 **/
 class GoogleRecaptchaEvent
 {
-    public static function loadSignInFooter( Response $response )
+    public static function loadSignInFooter( Output $output )
     {
         if ( ns()->option->get( 'gr_enable_login', 'yes' ) === 'yes' ) {
-            $response->addView( 'GoogleRecaptcha::sign-in', [
+            $output->addView( 'GoogleRecaptcha::sign-in', [
                 'options'   =>  app()->make( Options::class )
             ]);
         }
 
-        return $response;
+        return $output;
     }
 
-    public static function loadSignupFooter( Response $response )
+    public static function loadSignupFooter( Output $output )
     {
         if ( ns()->option->get( 'gr_enable_registration', 'yes' ) === 'yes' ) {
-            $response->addView( 'GoogleRecaptcha::sign-up', [
+            $output->addView( 'GoogleRecaptcha::sign-up', [
                 'options'   =>  app()->make( Options::class )
             ]);
         }
 
-        return $response;
+        return $output;
     }
 
     public static function signInFields( $fields )
@@ -62,10 +62,16 @@ class GoogleRecaptchaEvent
 
     public static function registerMenus( $menus )
     {
-        if( isset( $menus[ 'settings' ][ 'childrens' ] ) ) {
+        if( isset( $menus[ 'settings' ][ 'childrens' ] ) && ( isset( ns()->store ) && ! ns()->store->isMultiStore() ) ) {
             $menus[ 'settings' ][ 'childrens' ][]   =   [
-                'label'     =>      __( 'Google Recaptcha' ),
+                'label'     =>      __m( 'Google Recaptcha', 'GoogleRecaptcha' ),
                 'href'      =>      url( '/dashboard/google-recaptcha/settings' )
+            ];
+        } else {
+            $menus[ 'google-recaptcha' ]    =   [
+                'label'     =>  __m( 'Google Recaptcha', 'GoogleRecaptcha' ),
+                'icon'      =>  'la-fingerprint',
+                'href'      =>  url( '/dashboard/google-recaptcha/settings' )
             ];
         }
 
@@ -92,7 +98,7 @@ class GoogleRecaptchaEvent
         ]);
 
         $response       =   json_decode($response->getBody(), true);
-        $message        =   __('The code has been successfully validated.');
+        $message        =   __m('The code has been successfully validated.', 'GoogleRecaptcha');
 
         if (isset($response['error-codes'])) {
             switch ($response['error-codes'][0]) {

@@ -26,8 +26,8 @@ class GoogleRecaptchaController extends DashboardController
     public function settings()
     {
         return $this->view( 'GoogleRecaptcha::settings', [
-            'title'         =>  __( 'Google ReCaptcha Settings' ),
-            'description'   =>  __( 'Configure the security of your installation.' )
+            'title'         =>  __m( 'Google ReCaptcha Settings', 'GoogleRecaptcha' ),
+            'description'   =>  __m( 'Configure the security of your installation.', 'GoogleRecaptcha' )
         ]);
     }
 }

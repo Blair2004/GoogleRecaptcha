@@ -1,0 +1,20 @@
+{
+    "Google Recaptcha": "Google Recaptcha",
+    "The code has been successfully validated.": "Le code a été validé avec succès.",
+    "Google ReCaptcha Settings": "Paramètres de Google ReCaptcha",
+    "Configure the security of your installation.": "Configurez la sécurité de votre installation.",
+    "Unamed Page": "Page sans nom",
+    "No Description Provided": "Aucune description fournie",
+    "Unable to proceed the form is not valid.": "Impossible de continuer, le formulaire n'est pas valide.",
+    "General Settings": "réglages généraux",
+    "Google Site Key": "Clé de site Google",
+    "Provide the Google site key.": "Fournissez la clé du site Google.",
+    "Google Secret Key": "Clé secrète Google",
+    "Provide the Google secret key.": "Fournissez la clé secrète Google.",
+    "Enable For Login": "Activer pour la connexion",
+    "No": "Non",
+    "Yes": "Oui",
+    "Makes Google Recaptcha works on Login page.": "Fait fonctionner Google Recaptcha sur la page de connexion.",
+    "Enable For Registration": "Activer pour l'enregistrement",
+    "Makes Google Recaptcha works on registration page.": "Fait fonctionner Google Recaptcha sur la page d'inscription."
+}
