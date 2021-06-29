@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <module>
     <namespace>GoogleRecaptcha</namespace>
-    <version>4.2.0</version>
+    <version>4.3.0</version>
     <author>Blair Jersyer</author>
     <name>Google Recaptcha</name>
     <description>Provide a security layer to NexoPOS 4.x login &amp; registration forms.</description>

@@ -13,7 +13,6 @@
         <div>
             <ns-settings
                 url="{{ url( '/api/nexopos/v4/settings/google-recaptcha.settings' ) }}"
-                
                 >
                 <template v-slot:error-form-invalid>{{ __m( 'Unable to proceed the form is not valid.', 'GoogleRecaptcha' ) }}</template>
             </ns-settings>
