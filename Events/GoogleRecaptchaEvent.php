@@ -62,23 +62,31 @@ class GoogleRecaptchaEvent
 
     public static function registerMenus( $menus )
     {
-        if( isset( $menus[ 'settings' ][ 'childrens' ] ) && ( isset( ns()->store ) && ! ns()->store->isMultiStore() ) ) {
+        if ( isset( ns()->store ) ) {
+            if ( ! ns()->store->isMultiStore() && ! ns()->store->subDomainsEnabled() ) {
+                $menus[ 'google-recaptcha' ]    =   [
+                    'label'     =>  __m( 'Google Recaptcha', 'GoogleRecaptcha' ),
+                    'icon'      =>  'la-fingerprint',
+                    'href'      =>  url( '/dashboard/google-recaptcha/settings' )
+                ];
+            } else if ( ns()->store->isMultiStore() && ns()->store->subDomainsEnabled() ) {
+                $menus[ 'settings' ][ 'childrens' ][]   =   [
+                    'label'     =>      __m( 'Google Recaptcha', 'GoogleRecaptcha' ),
+                    'href'      =>      url( '/dashboard/google-recaptcha/settings' )
+                ];
+            }
+        } else {
             $menus[ 'settings' ][ 'childrens' ][]   =   [
                 'label'     =>      __m( 'Google Recaptcha', 'GoogleRecaptcha' ),
                 'href'      =>      url( '/dashboard/google-recaptcha/settings' )
             ];
-        } else {
-            $menus[ 'google-recaptcha' ]    =   [
-                'label'     =>  __m( 'Google Recaptcha', 'GoogleRecaptcha' ),
-                'icon'      =>  'la-fingerprint',
-                'href'      =>  url( '/dashboard/google-recaptcha/settings' )
-            ];
         }
-
+        
         return $menus;
     }
 
-    public static function settingsProvider( $class, $identifier ) {
+    public static function settingsProvider( $class, $identifier ) 
+    {
         if ( $identifier === 'google-recaptcha.settings' ) {
             return new GoogleRecaptchaSettings;
         }

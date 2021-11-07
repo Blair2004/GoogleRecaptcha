@@ -1,0 +1,20 @@
+{
+    "Google Recaptcha": "جوجل ريكابتشا",
+    "The code has been successfully validated.": "تم التحقق من صحة الرمز بنجاح.",
+    "Google ReCaptcha Settings": "إعدادات Google ReCaptcha",
+    "Configure the security of your installation.": "تكوين أمان التثبيت الخاص بك.",
+    "Unamed Page": "الصفحة غير المسماة",
+    "No Description Provided": "لا يوجد وصف مقدم",
+    "Unable to proceed the form is not valid.": "تعذر متابعة النموذج غير صالح.",
+    "General Settings": "الاعدادات العامة",
+    "Google Site Key": "مفتاح موقع Google",
+    "Provide the Google site key.": "أدخل مفتاح موقع Google.",
+    "Google Secret Key": "مفتاح Google السري",
+    "Provide the Google secret key.": "أدخل مفتاح سر Google.",
+    "Enable For Login": "تمكين لتسجيل الدخول",
+    "No": "لا",
+    "Yes": "نعم",
+    "Makes Google Recaptcha works on Login page.": "يجعل Google Recaptcha يعمل على صفحة تسجيل الدخول.",
+    "Enable For Registration": "تمكين للتسجيل",
+    "Makes Google Recaptcha works on registration page.": "يجعل Google Recaptcha يعمل على صفحة التسجيل."
+}
