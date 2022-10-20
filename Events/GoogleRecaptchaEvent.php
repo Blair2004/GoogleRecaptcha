@@ -41,7 +41,8 @@ class GoogleRecaptchaEvent
         if ( ns()->option->get( 'gr_enable_login', 'yes' ) === 'yes' ) {
             $fields[]   =   [
                 'type'  =>  'custom',
-                'name'  =>  'grField'
+                'name'  =>  'grField',
+                'component' =>  'grField'
             ];
         }
 
@@ -53,7 +54,8 @@ class GoogleRecaptchaEvent
         if ( ns()->option->get( 'gr_enable_registration', 'yes' ) === 'yes' ) {
             $fields[]   =   [
                 'type'  =>  'custom',
-                'name'  =>  'grField'
+                'name'  =>  'grField',
+                'component' =>  'grField'
             ];
         }
 
