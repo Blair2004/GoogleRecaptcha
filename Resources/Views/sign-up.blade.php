@@ -1,6 +1,6 @@
 <script src="https://www.google.com/recaptcha/api.js?render={{ $options->get( 'gr_google_site_key' ) }}"></script>
-<script>
-    nsExtraComponents.grField   =   Vue.component( 'grField', {
+<script type="module">
+    nsExtraComponents.grField   =   defineComponent({
         template : `<div class="w-full">
             <div class="py-2 flex items-center w-full rounded-lg bg-blue-100 p-2 anim-duration-500 fade-in-entrance" v-if="validating">
                 <ns-spinner size="6" border="2"/>

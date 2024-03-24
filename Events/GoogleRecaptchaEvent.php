@@ -87,15 +87,6 @@ class GoogleRecaptchaEvent
         return $menus;
     }
 
-    public static function settingsProvider( $class, $identifier ) 
-    {
-        if ( $identifier === 'google-recaptcha.settings' ) {
-            return new GoogleRecaptchaSettings;
-        }
-
-        return $class;
-    }
-
     public static function watchLoginForm( Request $request )
     {
         $client                 =   new Client();

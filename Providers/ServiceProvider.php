@@ -19,7 +19,6 @@ class ServiceProvider extends AppServiceProvider
         Hook::addFilter( 'ns-login-fields', [ GoogleRecaptchaEvent::class, 'signInFields' ]);
         Hook::addFilter( 'ns-register-fields', [ GoogleRecaptchaEvent::class, 'signUpFields' ]);
         Hook::addFilter( 'ns-dashboard-menus', [ GoogleRecaptchaEvent::class, 'registerMenus' ], 15 );
-        Hook::addFilter( 'ns.settings', [ GoogleRecaptchaEvent::class, 'settingsProvider' ], 10, 2 );
         Hook::addAction( 'ns-login-form', [ GoogleRecaptchaEvent::class, 'watchLoginForm' ]);
         Hook::addAction( 'ns-register-form', [ GoogleRecaptchaEvent::class, 'watchLoginForm' ]);
     }
